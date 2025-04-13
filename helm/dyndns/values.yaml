@@ -27,7 +27,7 @@ resources:
     cpu: 200m
     memory: 256Mi
 
-# ConfigMap values
+# ConfigMap Configuration
 config:
   cloudflareZoneId: ""
   dnsRecord: "example.com"
@@ -35,6 +35,6 @@ config:
   provider: "cloudflare"
   logLevel: "INFO"
 
-# Secret values (should be base64 encoded)
+# Secret Configuration (must be base64 encoded)
 secret:
   cloudflareApiToken: "" 
