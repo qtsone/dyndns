@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1](https://github.com/qtsone/dyndns/compare/v1.0.0...v1.0.1) (2025-04-13)
+
+
+### Bug Fixes
+
+* prepare helm package ([42f370b](https://github.com/qtsone/dyndns/commit/42f370b56465aa0d24ee36f0e4e322be2394ff5b))
+
 # 1.0.0 (2025-04-13)
 
 
