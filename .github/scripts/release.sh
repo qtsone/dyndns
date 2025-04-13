@@ -56,10 +56,10 @@ package_and_upload() {
   yq -i ".version = \"$_version\"" "$_path/Chart.yaml"
   
   log_info "[$_path] [$_version] Packaging..."
-  helm package --dependency-update --destination "$pkg_path/${OWNER}" "$_path"
+  helm package --dependency-update --destination "$pkg_path" "$_path"
 
   log_info "[$_path] [$_version] Publishing..."
-  helm push "${pkg_path}/${_name}-${_version}.tgz" "oci://ghcr.io/${OWNER}/${REPOSITORY}"
+  helm push "${pkg_path}/${_name}-${_version}.tgz" "oci://ghcr.io/${OWNER}"
 
   # Cleanup
   rm -rf "$pkg_path"
@@ -67,8 +67,9 @@ package_and_upload() {
   sleep 3
 }
 
+export CHART_NAME=$(basename "$REPOSITORY")
 colorize
 log_info "Processing chart..."
 log_info "Chart: $REPOSITORY"
 log_info "Version: $VERSION"
-package_and_upload "$CHART_PATH" "$REPOSITORY" "$VERSION"
+package_and_upload "$CHART_PATH" "$CHART_NAME" "$VERSION"
