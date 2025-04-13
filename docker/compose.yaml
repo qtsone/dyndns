@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  dyndns:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    env_file:
+      - .env
+    environment:
+      - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
+      - CLOUDFLARE_ZONE_ID=${CLOUDFLARE_ZONE_ID}
+      - DNS_RECORDS=${DNS_RECORDS}
+      - INTERVAL=${INTERVAL}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - PROXIED=${PROXIED}
+    volumes:
+      - ../src:/app/src
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

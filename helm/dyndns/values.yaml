@@ -1,0 +1,40 @@
+# Default values for dyndns
+replicaCount: 1
+
+image:
+  repository: ibacalu/dyndns
+  tag: latest
+  pullPolicy: Always
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: false
+  name: ""
+
+podSecurityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi
+
+# ConfigMap values
+config:
+  cloudflareZoneId: ""
+  dnsRecord: "example.com"
+  proxied: "true"
+  provider: "cloudflare"
+  logLevel: "INFO"
+
+# Secret values (should be base64 encoded)
+secret:
+  cloudflareApiToken: "" 

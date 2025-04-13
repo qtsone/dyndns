@@ -1,0 +1,23 @@
+Thank you for installing {{ .Chart.Name }}.
+
+Your release is named {{ .Release.Name }}.
+
+To get started with your Dynamic DNS updater, you need to configure the following values in your values.yaml:
+
+1. Set your Cloudflare Zone ID:
+   config:
+     cloudflareZoneId: "your-zone-id"
+
+2. Set your DNS record:
+   config:
+     dnsRecord: "your-domain.com"
+
+3. Set your Cloudflare API token (base64 encoded):
+   secret:
+     cloudflareApiToken: "your-base64-encoded-token"
+
+To upgrade your release:
+  helm upgrade {{ .Release.Name }} .
+
+To uninstall/delete the deployment:
+  helm uninstall {{ .Release.Name }} 
