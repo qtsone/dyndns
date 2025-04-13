@@ -56,7 +56,7 @@ package_and_upload() {
   yq -i ".version = \"$_version\"" "$_path/Chart.yaml"
   
   log_info "[$_path] [$_version] Packaging..."
-  helm package --dependency-update --destination "$pkg_path" "$_path"
+  helm package --dependency-update --destination "$pkg_path/${OWNER}" "$_path"
 
   log_info "[$_path] [$_version] Publishing..."
   helm push "${pkg_path}/${_name}-${_version}.tgz" "oci://ghcr.io/${OWNER}/${REPOSITORY}"
