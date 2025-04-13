@@ -52,6 +52,9 @@ package_and_upload() {
   echo "$GH_TOKEN" | docker login ghcr.io --username="${ACTOR}" --password-stdin
 
   git fetch --all
+  log_info "[$_path] [$_version] Updating Chart.yaml version..."
+  yq -i ".version = \"$_version\"" "$_path/Chart.yaml"
+  
   log_info "[$_path] [$_version] Packaging..."
   helm package --dependency-update --destination "$pkg_path" "$_path"
 
