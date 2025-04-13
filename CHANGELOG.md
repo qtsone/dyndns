@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.7](https://github.com/qtsone/dyndns/compare/v1.0.6...v1.0.7) (2025-04-13)
+
+
+### Bug Fixes
+
+* use DNS_RECORDS ([c1a5ba3](https://github.com/qtsone/dyndns/commit/c1a5ba38ce5aed7aa62cef941772cdc7e4bc8e4e))
+
 ## [1.0.6](https://github.com/qtsone/dyndns/compare/v1.0.5...v1.0.6) (2025-04-13)
 
 
