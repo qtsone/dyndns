@@ -12,7 +12,7 @@ jobs:
     - name: Build and Push Docker Image
       uses: qts-cloud/actions/docker/build@main
       with:
-        image-name: ibacalu/api-gateway
+        image-name: ibacalu/dyndns
         dockerfile-path: docker/Dockerfile
         dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
         dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}

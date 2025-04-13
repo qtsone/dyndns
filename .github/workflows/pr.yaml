@@ -18,7 +18,7 @@ jobs:
     - name: Docker Tests
       uses: qts-cloud/actions/docker/tests@main
       with:
-        image-name: ibacalu/api-gateway
+        image-name: ibacalu/dyndns
         dockerfile-path: docker/Dockerfile
         dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
         dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
