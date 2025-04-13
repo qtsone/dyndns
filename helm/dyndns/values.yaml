@@ -30,7 +30,7 @@ resources:
 # ConfigMap Configuration
 config:
   cloudflareZoneId: ""
-  dnsRecord: "example.com"
+  dnsRecords: "example.com"
   proxied: "true"
   provider: "cloudflare"
   logLevel: "INFO"
