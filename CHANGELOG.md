@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.6](https://github.com/qtsone/dyndns/compare/v1.0.5...v1.0.6) (2025-04-13)
+
+
+### Bug Fixes
+
+* update release ([1d18aa3](https://github.com/qtsone/dyndns/commit/1d18aa39e51bcedea4b52fb6f8c8c329b8b59cbe))
+
 ## [1.0.5](https://github.com/qtsone/dyndns/compare/v1.0.4...v1.0.5) (2025-04-13)
 
 
