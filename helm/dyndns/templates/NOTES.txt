@@ -21,3 +21,4 @@ To upgrade your release:
 
 To uninstall/delete the deployment:
   helm uninstall {{ .Release.Name }} 
+

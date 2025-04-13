@@ -58,8 +58,16 @@ package_and_upload() {
   log_info "[$_path] [$_version] Packaging..."
   helm package --dependency-update --destination "$pkg_path" "$_path"
 
+  chart_file="${pkg_path}/${_name}-${_version}.tgz"
+  log_info "[$_path] [$_version] Verifying chart file..."
+  ls -la "$pkg_path"
+  if [ ! -f "$chart_file" ]; then
+    log_error "Chart file not found at expected location: $chart_file"
+    exit 1
+  fi
+
   log_info "[$_path] [$_version] Publishing..."
-  helm push ${pkg_path}/${_name}-${_version}.tgz oci://ghcr.io/${OWNER}
+  helm push "$chart_file" "oci://ghcr.io/${OWNER}"
 
   # Cleanup
   rm -rf "$pkg_path"
