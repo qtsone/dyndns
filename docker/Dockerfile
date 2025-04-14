@@ -41,4 +41,4 @@ RUN python -m pip install --no-cache-dir -r requirements.txt
 USER appuser
 
 # Run the application
-ENTRYPOINT ["python", "-m", "src"] 
+ENTRYPOINT ["python", "main.py"] 

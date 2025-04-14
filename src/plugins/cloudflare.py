@@ -8,7 +8,7 @@ from typing import Optional
 import requests
 from pydantic import BaseModel
 
-from ..updater import DNSProvider, ProviderConfig, DNSRecord
+from updater import DNSProvider, ProviderConfig, DNSRecord
 
 logger = logging.getLogger(__name__)
 

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Main entry point for the DNS updater.
 """
@@ -7,8 +8,8 @@ import sys
 import time
 from typing import Optional, Type
 
-from .updater import DNSProvider, DNSUpdater, DNSRecord
-from .plugins import CloudflareProvider
+from updater import DNSProvider, DNSUpdater, DNSRecord
+from plugins import CloudflareProvider
 
 def setup_logging(level: str = "INFO") -> None:
     """Setup logging configuration."""
@@ -136,4 +137,4 @@ def main():
     return 0
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main()) 
